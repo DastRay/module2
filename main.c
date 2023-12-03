@@ -24,7 +24,7 @@ typedef struct {
    int num_empl;
 } Employees_storage;
 
-//функция для добавления новго сотрудника в хранилище Employees_storage
+//С„СѓРЅРєС†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РІ С…СЂР°РЅРёР»РёС‰Рµ Employees_storage
 void addEmployee(Employees_storage* storage_, const char* surname_, const char* name_, const char* ptrnmc_, const char* post_, \
    const char* sex_,  const char* hire_date_)
 {
@@ -44,24 +44,24 @@ void addEmployee(Employees_storage* storage_, const char* surname_, const char* 
 
    else
    {
-      printf("Хранилище заполнено! Добавить нового сотрудника невозможно");
+      printf("РҐСЂР°РЅРёР»РёС‰Рµ Р·Р°РїРѕР»РЅРµРЅРѕ! Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РЅРµРІРѕР·РјРѕР¶РЅРѕ");
    }
 }
 
-// функция вывода информации о сотрудниках из хранилища Employees_storage
+// С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… РёР· С…СЂР°РЅРёР»РёС‰Р° Employees_storage
 void printStorage(const Employees_storage* storage_)
 {
-   printf("Сведения о сотрудниках:\n-------------------------------------\n");
+   printf("РЎРІРµРґРµРЅРёСЏ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…:\n-------------------------------------\n");
 
    for (int i = 0; i < storage_->num_empl; i++)
    {
-      printf("Сотрудник № %d\n", i + 1);
-      printf("Фамилия: %s\n", storage_->employee[i].surname);
-      printf("Имя: %s\n", storage_->employee[i].name);
-      printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-      printf("Должность: %s\n", storage_->employee[i].post);
-      printf("Пол: %s\n", storage_->employee[i].sex);
-      printf("Дата приёма на работу: %s\n", storage_->employee[i].hire_date);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРє в„– %d\n", i + 1);
+      printf("Р¤Р°РјРёР»РёСЏ: %s\n", storage_->employee[i].surname);
+      printf("РРјСЏ: %s\n", storage_->employee[i].name);
+      printf("РћС‚С‡РµСЃС‚РІРѕ: %s\n", storage_->employee[i].ptrnmc);
+      printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s\n", storage_->employee[i].post);
+      printf("РџРѕР»: %s\n", storage_->employee[i].sex);
+      printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %s\n", storage_->employee[i].hire_date);
       printf("-------------------------------------\n");
    }
 }
@@ -73,11 +73,11 @@ int main()
    Employees_storage employees;
    employees.num_empl = 0;
 
-   addEmployee(&employees, "Иванов", "Иван", "Иванович", "Директор", "Мужской", "01-01-2000");
-   addEmployee(&employees, "Александров", "Александр", "Александрович", "Менеджер", "Мужской", "02-01-2000");
-   addEmployee(&employees, "Ильин", "Александр", "Валерьевич", "Бухгалтер", "Мужской", "31-01-2020");
-   addEmployee(&employees, "Ильин", "Александр", "Валерьевич", "Бухгалтер", "Мужской", "31-01-2020");
-   addEmployee(&employees, "Сидорова", "Елена", "Викторовна", "Бухгалтер", "Женский", "10-10-2012");
+   addEmployee(&employees, "РРІР°РЅРѕРІ", "РРІР°РЅ", "РРІР°РЅРѕРІРёС‡", "Р”РёСЂРµРєС‚РѕСЂ", "РњСѓР¶СЃРєРѕР№", "01-01-2000");
+   addEmployee(&employees, "РђР»РµРєСЃР°РЅРґСЂРѕРІ", "РђР»РµРєСЃР°РЅРґСЂ", "РђР»РµРєСЃР°РЅРґСЂРѕРІРёС‡", "РњРµРЅРµРґР¶РµСЂ", "РњСѓР¶СЃРєРѕР№", "02-01-2000");
+   addEmployee(&employees, "РР»СЊРёРЅ", "РђР»РµРєСЃР°РЅРґСЂ", "Р’Р°Р»РµСЂСЊРµРІРёС‡", "Р‘СѓС…РіР°Р»С‚РµСЂ", "РњСѓР¶СЃРєРѕР№", "31-01-2020");
+   addEmployee(&employees, "РР»СЊРёРЅ", "РђР»РµРєСЃР°РЅРґСЂ", "Р’Р°Р»РµСЂСЊРµРІРёС‡", "Р‘СѓС…РіР°Р»С‚РµСЂ", "РњСѓР¶СЃРєРѕР№", "31-01-2020");
+   addEmployee(&employees, "РЎРёРґРѕСЂРѕРІР°", "Р•Р»РµРЅР°", "Р’РёРєС‚РѕСЂРѕРІРЅР°", "Р‘СѓС…РіР°Р»С‚РµСЂ", "Р–РµРЅСЃРєРёР№", "10-10-2012");
 
    printStorage(&employees);
 
