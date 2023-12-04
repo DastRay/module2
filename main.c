@@ -65,6 +65,12 @@ void printStorage(const Employees_storage* storage_)
    }
 }
 
+// функция выводящяя информацию о сотрудниках, стаж которых превышает 10 лет
+void checkExp(const Employees_storage* storage_)
+{
+
+}
+
 int main()
 {
    setlocale(LC_ALL, "Rus");
@@ -107,18 +113,18 @@ int main()
          fgets(po_st, max_post_len, file);
          fgets(s_ex, max_sex_len, file);
          fgets(hire_date, max_date_len, file);
-         
-
          addEmployee(&employees, sur_name, na_me, ptr_nmc, po_st, s_ex, hire_date);
          count++;
       }
    }
   
-   /*addEmployee(&employees, "Иванов", "Иван", "Иванович", "Директор", "Мужской", "01-01-2000");
+   /*
+   addEmployee(&employees, "Иванов", "Иван", "Иванович", "Директор", "Мужской", "01-01-2000");
    addEmployee(&employees, "Александров", "Александр", "Александрович", "Менеджер", "Мужской", "02-01-2000");
    addEmployee(&employees, "Ильин", "Александр", "Валерьевич", "Бухгалтер", "Мужской", "31-01-2020");
    addEmployee(&employees, "Ильин", "Александр", "Валерьевич", "Бухгалтер", "Мужской", "31-01-2020");
-   addEmployee(&employees, "Сидорова", "Елена", "Викторовна", "Бухгалтер", "Женский", "10-10-2012");*/
+   addEmployee(&employees, "Сидорова", "Елена", "Викторовна", "Бухгалтер", "Женский", "10-10-2012");
+   */
 
    printStorage(&employees);
 
