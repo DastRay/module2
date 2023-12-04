@@ -23,7 +23,7 @@ typedef struct {
    int num_empl;
 } Employees_storage;
 
-//функция для добавления новго сотрудника в хранилище Employees_storage
+//С„СѓРЅРєС†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РІ С…СЂР°РЅРёР»РёС‰Рµ Employees_storage
 void addEmployee(Employees_storage* storage_, const char* surname_, const char* name_, const char* ptrnmc_, const char* post_, \
    const char* sex_,  const char* hire_date_)
 {
@@ -43,29 +43,29 @@ void addEmployee(Employees_storage* storage_, const char* surname_, const char* 
 
    else
    {
-      printf("Хранилище заполнено! Добавить нового сотрудника невозможно");
+      printf("РҐСЂР°РЅРёР»РёС‰Рµ Р·Р°РїРѕР»РЅРµРЅРѕ! Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РЅРµРІРѕР·РјРѕР¶РЅРѕ");
    }
 }
 
-// функция вывода информации о сотрудниках из хранилища Employees_storage
+// С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… РёР· С…СЂР°РЅРёР»РёС‰Р° Employees_storage
 void printStorage(const Employees_storage* storage_)
 {
-   printf("Сведения о сотрудниках:\n-------------------------------------\n");
+   printf("РЎРІРµРґРµРЅРёСЏ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…:\n-------------------------------------\n");
 
    for (int i = 0; i < storage_->num_empl; i++)
    {
-      printf("Сотрудник №%d\n", i + 1);
-      printf("Фамилия: %s", storage_->employee[i].surname);
-      printf("Имя: %s", storage_->employee[i].name);
-      printf("Отчество: %s", storage_->employee[i].ptrnmc);
-      printf("Должность: %s", storage_->employee[i].post);
-      printf("Пол: %s", storage_->employee[i].sex);
-      printf("Дата приёма на работу: %s", storage_->employee[i].hiredate);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРє в„–%d\n", i + 1);
+      printf("Р¤Р°РјРёР»РёСЏ: %s", storage_->employee[i].surname);
+      printf("РРјСЏ: %s", storage_->employee[i].name);
+      printf("РћС‚С‡РµСЃС‚РІРѕ: %s", storage_->employee[i].ptrnmc);
+      printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s", storage_->employee[i].post);
+      printf("РџРѕР»: %s", storage_->employee[i].sex);
+      printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %s", storage_->employee[i].hiredate);
       printf("\n-------------------------------------\n");
    }
 }
 
-// функция выводящяя информацию о сотрудниках, стаж которых превышает 10 лет
+// С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґСЏС‰СЏСЏ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РїСЂРµРІС‹С€Р°РµС‚ 10 Р»РµС‚
 void checkExp(const Employees_storage* storage_)
 {
 
@@ -94,13 +94,13 @@ int main()
    char s_ex[max_sex_len];
    char hire_date[max_date_len];
 
-   printf("Данные считываются.\n");
+   printf("Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚С‹РІР°СЋС‚СЃСЏ.\n");
    int count = 0;
    while (count < max_empl_num)
    {
       if (feof(file))
       {
-         printf("Все данные успешно считаны считаны.\n");
+         printf("Р’СЃРµ РґР°РЅРЅС‹Рµ СѓСЃРїРµС€РЅРѕ СЃС‡РёС‚Р°РЅС‹ СЃС‡РёС‚Р°РЅС‹.\n");
          printf("\n");
          break;
       }
@@ -119,11 +119,11 @@ int main()
    }
   
    /*
-   addEmployee(&employees, "Иванов", "Иван", "Иванович", "Директор", "Мужской", "01-01-2000");
-   addEmployee(&employees, "Александров", "Александр", "Александрович", "Менеджер", "Мужской", "02-01-2000");
-   addEmployee(&employees, "Ильин", "Александр", "Валерьевич", "Бухгалтер", "Мужской", "31-01-2020");
-   addEmployee(&employees, "Ильин", "Александр", "Валерьевич", "Бухгалтер", "Мужской", "31-01-2020");
-   addEmployee(&employees, "Сидорова", "Елена", "Викторовна", "Бухгалтер", "Женский", "10-10-2012");
+   addEmployee(&employees, "РРІР°РЅРѕРІ", "РРІР°РЅ", "РРІР°РЅРѕРІРёС‡", "Р”РёСЂРµРєС‚РѕСЂ", "РњСѓР¶СЃРєРѕР№", "01-01-2000");
+   addEmployee(&employees, "РђР»РµРєСЃР°РЅРґСЂРѕРІ", "РђР»РµРєСЃР°РЅРґСЂ", "РђР»РµРєСЃР°РЅРґСЂРѕРІРёС‡", "РњРµРЅРµРґР¶РµСЂ", "РњСѓР¶СЃРєРѕР№", "02-01-2000");
+   addEmployee(&employees, "РР»СЊРёРЅ", "РђР»РµРєСЃР°РЅРґСЂ", "Р’Р°Р»РµСЂСЊРµРІРёС‡", "Р‘СѓС…РіР°Р»С‚РµСЂ", "РњСѓР¶СЃРєРѕР№", "31-01-2020");
+   addEmployee(&employees, "РР»СЊРёРЅ", "РђР»РµРєСЃР°РЅРґСЂ", "Р’Р°Р»РµСЂСЊРµРІРёС‡", "Р‘СѓС…РіР°Р»С‚РµСЂ", "РњСѓР¶СЃРєРѕР№", "31-01-2020");
+   addEmployee(&employees, "РЎРёРґРѕСЂРѕРІР°", "Р•Р»РµРЅР°", "Р’РёРєС‚РѕСЂРѕРІРЅР°", "Р‘СѓС…РіР°Р»С‚РµСЂ", "Р–РµРЅСЃРєРёР№", "10-10-2012");
    */
 
    printStorage(&employees);
