@@ -133,6 +133,6 @@ void readFile(FILE* file)
          count++;
       }
    }
-   //printStorage(&employees); вывод всех с сотрудников
+   printStorage(&employees); //вывод всех с сотрудников
    checkExp(&employees); //вывод сотрудников, стаж которых превышает 10 лет
 }
