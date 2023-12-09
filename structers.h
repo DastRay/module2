@@ -23,28 +23,28 @@ typedef struct {
 } Employees_storage;
 
 /**
- * @brief функци§ дл¤ добавлени¤ новго сотрудника в хранилище Employees_storage
+ * @brief функция дл¤ добавления новго сотрудника в хранилище Employees_storage
  * @param storage_ указатель на хранилище структур
- * @param surname_ фамили¤
- * @param name_ им¤
+ * @param surname_ фамилия
+ * @param name_ имя
  * @param ptrnmc_ отчество
  * @param post_ должность
  * @param sex_ пол
- * @param hire_date_d_ день приЄма на работу
- * @param hire_date_m_ мес¤ц приЄма на работу
+ * @param hire_date_d_ день приёма на работу
+ * @param hire_date_m_ месяц приёма на работу
  * @param hire_date_y_ год приЄма на работу
 */
 void addEmployee(Employees_storage* storage_, const char* surname_, const char* name_, const char* ptrnmc_, const char* post_, \
    const char* sex_, int hire_date_d_, int hire_date_m_, int hire_date_y_);
 
 /**
-* @brief  функци¤ вывода информации о сотрудниках из хранилища Employees_storage
+* @brief  функция вывода информации о сотрудниках из хранилища Employees_storage
 * @param storage_ указатель на хранилище струткур
 */
 void printStorage(const Employees_storage* storage_);
 
 /**
- * @brief функци§ вывод¤щ¤¤ информацию о сотрудниках, стаж которых превышает 10 лет
+ * @brief функция выводящяя информацию о сотрудниках, стаж которых превышает 10 лет
  * @param storage_ указатель на хранилище структур
 */
 void checkExp(const Employees_storage* storage_);
