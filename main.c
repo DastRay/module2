@@ -25,7 +25,7 @@ typedef struct {
    int num_empl;
 } Employees_storage;
 
-//функция для добавления новго сотрудника в хранилище Employees_storage
+//С„СѓРЅРєС†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РІ С…СЂР°РЅРёР»РёС‰Рµ Employees_storage
 void addEmployee(Employees_storage* storage_, const char* surname_, const char* name_, const char* ptrnmc_, const char* post_, \
    const char* sex_, int hire_date_d_,int hire_date_m_, int hire_date_y_)
 {
@@ -49,29 +49,29 @@ void addEmployee(Employees_storage* storage_, const char* surname_, const char* 
 
    else
    {
-      printf("Хранилище заполнено! Добавить нового сотрудника невозможно");
+      printf("РҐСЂР°РЅРёР»РёС‰Рµ Р·Р°РїРѕР»РЅРµРЅРѕ! Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РЅРµРІРѕР·РјРѕР¶РЅРѕ");
    }
 }
 
-// функция вывода информации о сотрудниках из хранилища Employees_storage
+// С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… РёР· С…СЂР°РЅРёР»РёС‰Р° Employees_storage
 void printStorage(const Employees_storage* storage_)
 {
-   printf("Сведения о сотрудниках:\n-------------------------------------\n");
+   printf("РЎРІРµРґРµРЅРёСЏ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…:\n-------------------------------------\n");
 
    for (int i = 0; i < storage_->num_empl; i++)
    {
-      printf("Сотрудник №%d\n", i + 1);
-      printf("Фамилия: %s\n", storage_->employee[i].surname);
-      printf("Имя: %s\n", storage_->employee[i].name);
-      printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-      printf("Должность: %s\n", storage_->employee[i].post);
-      printf("Пол: %s\n", storage_->employee[i].sex);
-      printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРє в„–%d\n", i + 1);
+      printf("Р¤Р°РјРёР»РёСЏ: %s\n", storage_->employee[i].surname);
+      printf("РРјСЏ: %s\n", storage_->employee[i].name);
+      printf("РћС‚С‡РµСЃС‚РІРѕ: %s\n", storage_->employee[i].ptrnmc);
+      printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s\n", storage_->employee[i].post);
+      printf("РџРѕР»: %s\n", storage_->employee[i].sex);
+      printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
       printf("-------------------------------------\n");
    }
 }
 
-// функция выводящяя информацию о сотрудниках, стаж которых превышает 10 лет
+// С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґСЏС‰СЏСЏ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РїСЂРµРІС‹С€Р°РµС‚ 10 Р»РµС‚
 void checkExp(const Employees_storage* storage_)
 {
 
@@ -102,13 +102,13 @@ int main()
    int hire_date_m;
    int hire_date_y;
 
-   printf("Данные считываются.\n");
+   printf("Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚С‹РІР°СЋС‚СЃСЏ.\n");
    int count = 0;
    while (count < MAX_EMPL_NUM)
    {
       if (feof(file))
       {
-         printf("Все данные успешно считаны считаны.\n");
+         printf("Р’СЃРµ РґР°РЅРЅС‹Рµ СѓСЃРїРµС€РЅРѕ СЃС‡РёС‚Р°РЅС‹ СЃС‡РёС‚Р°РЅС‹.\n");
          printf("\n");
          break;
       }
