@@ -66,7 +66,7 @@ void checkExp(const Employees_storage* storage_)
 
       else
       {
-         if (storage_->employee[i].hiredate_y < 2013 && storage_->employee[i].hiredate_m < 12)
+         if (storage_->employee[i].hiredate_y == 2013 && storage_->employee[i].hiredate_m < 12)
          {
             printf("Сотрудник №%d\n", i + 1);
             printf("Фамилия: %s\n", storage_->employee[i].surname);
@@ -80,7 +80,7 @@ void checkExp(const Employees_storage* storage_)
 
          else
          {
-            if (storage_->employee[i].hiredate_y < 2013 && storage_->employee[i].hiredate_m < 12 && storage_->employee[i].hiredate_d < 9)
+            if (storage_->employee[i].hiredate_y == 2013 && storage_->employee[i].hiredate_m == 12 && storage_->employee[i].hiredate_d < 9)
             {
                printf("Сотрудник №%d\n", i + 1);
                printf("Фамилия: %s\n", storage_->employee[i].surname);
