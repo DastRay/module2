@@ -52,7 +52,7 @@ void checkExp(const Employees_storage* storage_)
 
    for (int i = 0; i < storage_->num_empl; i++)
    {
-      if (storage_->employee[i].hiredate_y < 2013)
+      if ((storage_->employee[i].hiredate_y < 2013) || (storage_->employee[i].hiredate_y == 2013 && storage_->employee[i].hiredate_m < 12) || (storage_->employee[i].hiredate_y == 2013 && storage_->employee[i].hiredate_m == 12 && storage_->employee[i].hiredate_d < 9) )
       {
          printf("Сотрудник №%d\n", i + 1);
          printf("Фамилия: %s\n", storage_->employee[i].surname);
@@ -62,36 +62,6 @@ void checkExp(const Employees_storage* storage_)
          printf("Пол: %s\n", storage_->employee[i].sex);
          printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
          printf("-------------------------------------\n");
-      }
-
-      else
-      {
-         if (storage_->employee[i].hiredate_y == 2013 && storage_->employee[i].hiredate_m < 12)
-         {
-            printf("Сотрудник №%d\n", i + 1);
-            printf("Фамилия: %s\n", storage_->employee[i].surname);
-            printf("Имя: %s\n", storage_->employee[i].name);
-            printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-            printf("Должность: %s\n", storage_->employee[i].post);
-            printf("Пол: %s\n", storage_->employee[i].sex);
-            printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
-            printf("-------------------------------------\n");
-         }
-
-         else
-         {
-            if (storage_->employee[i].hiredate_y == 2013 && storage_->employee[i].hiredate_m == 12 && storage_->employee[i].hiredate_d < 9)
-            {
-               printf("Сотрудник №%d\n", i + 1);
-               printf("Фамилия: %s\n", storage_->employee[i].surname);
-               printf("Имя: %s\n", storage_->employee[i].name);
-               printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-               printf("Должность: %s\n", storage_->employee[i].post);
-               printf("Пол: %s\n", storage_->employee[i].sex);
-               printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
-               printf("-------------------------------------\n");
-            }
-         }
       }
    }
 }
