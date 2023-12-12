@@ -23,28 +23,34 @@ typedef struct {
 } Employees_storage;
 
 /**
- * @brief С„СѓРЅРєС†РёСЏ РґР»В¤ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РІ С…СЂР°РЅРёР»РёС‰Рµ Employees_storage
- * @param storage_ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С…СЂР°РЅРёР»РёС‰Рµ СЃС‚СЂСѓРєС‚СѓСЂ
- * @param surname_ С„Р°РјРёР»РёСЏ
- * @param name_ РёРјСЏ
- * @param ptrnmc_ РѕС‚С‡РµСЃС‚РІРѕ
- * @param post_ РґРѕР»Р¶РЅРѕСЃС‚СЊ
- * @param sex_ РїРѕР»
- * @param hire_date_d_ РґРµРЅСЊ РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ
- * @param hire_date_m_ РјРµСЃСЏС† РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ
- * @param hire_date_y_ РіРѕРґ РїСЂРёР„РјР° РЅР° СЂР°Р±РѕС‚Сѓ
+ * @brief функция для добавления новго сотрудника в хранилище Employees_storage
+ * @param storage_ указатель на хранилище структур
+ * @param surname_ фамилия
+ * @param name_ имя
+ * @param ptrnmc_ отчество
+ * @param post_ должность
+ * @param sex_ пол
+ * @param hire_date_d_ день приёма на работу
+ * @param hire_date_m_ месяц приёма на работу
+ * @param hire_date_y_ год приЄма на работу
 */
 void addEmployee(Employees_storage* storage_, const char* surname_, const char* name_, const char* ptrnmc_, const char* post_, \
    const char* sex_, int hire_date_d_, int hire_date_m_, int hire_date_y_);
 
 /**
-* @brief  С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… РёР· С…СЂР°РЅРёР»РёС‰Р° Employees_storage
-* @param storage_ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С…СЂР°РЅРёР»РёС‰Рµ СЃС‚СЂСѓС‚РєСѓСЂ
+* @brief  функция вывода информации о сотрудниках из хранилища Employees_storage
+* @param storage_ указатель на хранилище струткур
 */
 void printStorage(const Employees_storage* storage_);
 
 /**
- * @brief С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґСЏС‰СЏСЏ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РїСЂРµРІС‹С€Р°РµС‚ 10 Р»РµС‚
- * @param storage_ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С…СЂР°РЅРёР»РёС‰Рµ СЃС‚СЂСѓРєС‚СѓСЂ
+ * @brief функция выводящяя информацию о сотрудниках, стаж которых превышает 10 лет
+ * @param storage_ указатель на хранилище структур
 */
 void checkExp(const Employees_storage* storage_);
+
+/**
+ * @brief функция считывания информации из файла
+ * @param file файл, из котрого считываем
+*/
+void readFile(FILE* file);
