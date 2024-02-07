@@ -22,14 +22,14 @@ void readFile(FILE* file)
    int hire_date_m;
    int hire_date_y;
 
-   printf("Данные о сотрудниках компании считываются\n");
+   printf("Р”Р°РЅРЅС‹Рµ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… РєРѕРјРїР°РЅРёРё СЃС‡РёС‚С‹РІР°СЋС‚СЃСЏ\n");
    int count = 0;
 
    while (count < MAX_EMPL_NUM)
    {
       if (feof(file))
       {
-         printf("Все данные успешно считаны считаны\n");
+         printf("Р’СЃРµ РґР°РЅРЅС‹Рµ СѓСЃРїРµС€РЅРѕ СЃС‡РёС‚Р°РЅС‹ СЃС‡РёС‚Р°РЅС‹\n");
          printf("\n");
          break;
       }
@@ -42,7 +42,7 @@ void readFile(FILE* file)
          fscanf_s(file, "%s", s_ex, MAX_SEX_LEN);
          fscanf_s(file, "%d-%d-%d", &hire_date_d, &hire_date_m, &hire_date_y);
 
-         addEmployee(&employees, sur_name, na_me, ptr_nmc, po_st, s_ex, hire_date_d, hire_date_m, hire_date_y); // добавление сотрудника
+         addEmployee(&employees, sur_name, na_me, ptr_nmc, po_st, s_ex, hire_date_d, hire_date_m, hire_date_y); // РґРѕР±Р°РІР»РµРЅРёРµ СЃРѕС‚СЂСѓРґРЅРёРєР°
          count++;
       }
    }
@@ -52,17 +52,17 @@ void readFile(FILE* file)
 
 void printStorage(const Employees_storage* storage_)
 {
-   printf("Сведения о сотрудниках:\n-------------------------------------\n");
+   printf("РЎРІРµРґРµРЅРёСЏ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…:\n-------------------------------------\n");
 
    for (int i = 0; i < storage_->num_empl; i++)
    {
-      printf("Сотрудник №%d\n", i + 1);
-      printf("Фамилия: %s\n", storage_->employee[i].surname);
-      printf("Имя: %s\n", storage_->employee[i].name);
-      printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-      printf("Должность: %s\n", storage_->employee[i].post);
-      printf("Пол: %s\n", storage_->employee[i].sex);
-      printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРє в„–%d\n", i + 1);
+      printf("Р¤Р°РјРёР»РёСЏ: %s\n", storage_->employee[i].surname);
+      printf("РРјСЏ: %s\n", storage_->employee[i].name);
+      printf("РћС‚С‡РµСЃС‚РІРѕ: %s\n", storage_->employee[i].ptrnmc);
+      printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s\n", storage_->employee[i].post);
+      printf("РџРѕР»: %s\n", storage_->employee[i].sex);
+      printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
       printf("-------------------------------------\n");
    }
 }
@@ -91,7 +91,7 @@ void addEmployee(Employees_storage* storage_, const char* surname_, const char* 
 
    else
    {
-      printf("Хранилище заполнено! Добавить нового сотрудника невозможно\n");
+      printf("РҐСЂР°РЅРёР»РёС‰Рµ Р·Р°РїРѕР»РЅРµРЅРѕ! Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ СЃРѕС‚СЂСѓРґРЅРёРєР° РЅРµРІРѕР·РјРѕР¶РЅРѕ\n");
       storage_->eror = false;
    }
 }
@@ -103,19 +103,19 @@ void addEmployeeFile(const Employees_storage* storage_, FILE* file)
    char ptr_nmc[MAX_NAME_LEN];
    char po_st[MAX_POST_LEN];
    char s_ex[MAX_SEX_LEN];
-   unsigned int datee[3]; //datee[0] - число, datee[1] - месяц, datee[2] - год
-   printf("Добавление сотрудника:\n");
-   printf("Введите фамилию: ");
+   unsigned int datee[3]; //datee[0] - С‡РёСЃР»Рѕ, datee[1] - РјРµСЃСЏС†, datee[2] - РіРѕРґ
+   printf("Р”РѕР±Р°РІР»РµРЅРёРµ СЃРѕС‚СЂСѓРґРЅРёРєР°:\n");
+   printf("Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ");
    scanf_s("%s", sur_name, MAX_NAME_LEN);
-   printf("Введите имя: ");
+   printf("Р’РІРµРґРёС‚Рµ РёРјСЏ: ");
    scanf_s("%s", na_me, MAX_NAME_LEN);
-   printf("Введите отчество: ");
+   printf("Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ: ");
    scanf_s("%s", ptr_nmc, MAX_NAME_LEN);
-   printf("Введите должность: ");
+   printf("Р’РІРµРґРёС‚Рµ РґРѕР»Р¶РЅРѕСЃС‚СЊ: ");
    scanf_s("%s", po_st, MAX_POST_LEN);
-   printf("Введите пол: ");
+   printf("Р’РІРµРґРёС‚Рµ РїРѕР»: ");
    scanf_s("%s", s_ex, MAX_SEX_LEN);
-   printf("Введите дату приёма на работу ДД-ММ-ГГГГ: ");
+   printf("Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ Р”Р”-РњРњ-Р“Р“Р“Р“: ");
    scanf_s("%u-%u-%u", &datee[0], &datee[1], &datee[2]);
    addEmployee(storage_, sur_name, na_me, ptr_nmc, po_st, s_ex, datee[0], datee[1], datee[2]);
 
@@ -125,7 +125,7 @@ void addEmployeeFile(const Employees_storage* storage_, FILE* file)
       fprintf(file, "%s %s %s %s %s ", sur_name, na_me, ptr_nmc, po_st, s_ex);
       fprintf(file, "%u-%u-%u", datee[0], datee[1], datee[2]);
 
-      printf("Сотрудник успешно добавлен\n");
+      printf("РЎРѕС‚СЂСѓРґРЅРёРє СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ\n");
    }
    printf("\n");
 }
@@ -133,7 +133,7 @@ void addEmployeeFile(const Employees_storage* storage_, FILE* file)
 void deleteEmployeeFile(const Employees_storage* storage_, FILE* file_)
 {
    unsigned int number;
-   printf("Введите номер сотрудника которого необходимо удалить из списка: ");
+   printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃРѕС‚СЂСѓРґРЅРёРєР° РєРѕС‚РѕСЂРѕРіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ РёР· СЃРїРёСЃРєР°: ");
    scanf_s("%u", &number);
 
    fclose(file_);
@@ -161,8 +161,8 @@ void deleteEmployeeFile(const Employees_storage* storage_, FILE* file_)
       fprintf(copy, "%d-%d-%d", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
    }
 
-   printf("Сотрудник успешно удалён\n");
-   printf("Обновление данных о сотрудниках...\n");
+   printf("РЎРѕС‚СЂСѓРґРЅРёРє СѓСЃРїРµС€РЅРѕ СѓРґР°Р»С‘РЅ\n");
+   printf("РћР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…...\n");
    fclose(copy);
 
    FILE* file;
@@ -181,15 +181,15 @@ void deleteEmployeeFile(const Employees_storage* storage_, FILE* file_)
 void checkExp(const Employees_storage* storage_)
 {
    unsigned int num;
-   printf("1 - Вывести данные о сотрудниках стаж которых превышает n лет\n");
-   printf("2 - Вывести данные о сотрудниках стаж которых меньше n лет\n");
-   printf("3 - Вывести данные о сотрудниках стаж которых равен n лет\n");
-   printf("Выберите действие: ");
+   printf("1 - Р’С‹РІРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РїСЂРµРІС‹С€Р°РµС‚ n Р»РµС‚\n");
+   printf("2 - Р’С‹РІРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РјРµРЅСЊС€Рµ n Р»РµС‚\n");
+   printf("3 - Р’С‹РІРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С… СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… СЂР°РІРµРЅ n Р»РµС‚\n");
+   printf("Р’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ: ");
    scanf_s("%u", &num);
 
    unsigned int choice;
-   printf("Ввести текущую дату автоматически?\n1 - Да\n2 - Нет\n");
-   printf("Ввведите 1 или 2: ");
+   printf("Р’РІРµСЃС‚Рё С‚РµРєСѓС‰СѓСЋ РґР°С‚Сѓ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё?\n1 - Р”Р°\n2 - РќРµС‚\n");
+   printf("Р’РІРІРµРґРёС‚Рµ 1 РёР»Рё 2: ");
    scanf_s("%u", &choice);
 
    unsigned int day;
@@ -208,11 +208,11 @@ void checkExp(const Employees_storage* storage_)
    }
    else
    {
-      printf("Введите текущую дату в формате ДД-ММ-ГГГГ: ");
+      printf("Р’РІРµРґРёС‚Рµ С‚РµРєСѓС‰СѓСЋ РґР°С‚Сѓ РІ С„РѕСЂРјР°С‚Рµ Р”Р”-РњРњ-Р“Р“Р“Р“: ");
       scanf_s("%u-%u-%u", &day, &month, &year);
    }
 
-   printf("Введите стаж (количество лет): ");
+   printf("Р’РІРµРґРёС‚Рµ СЃС‚Р°Р¶ (РєРѕР»РёС‡РµСЃС‚РІРѕ Р»РµС‚): ");
    scanf_s("%u", &exp);
    printf("\n");
 
@@ -220,20 +220,20 @@ void checkExp(const Employees_storage* storage_)
    {
    case 1:
    {
-      printf("Сотрудники, стаж которых превышает %d лет:\n", exp);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРєРё, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РїСЂРµРІС‹С€Р°РµС‚ %d Р»РµС‚:\n", exp);
       printf("-------------------------------------\n");
 
       for (int i = 0; i < storage_->num_empl; i++)
       {
          if ((storage_->employee[i].hiredate_y < (year - exp)) || (storage_->employee[i].hiredate_y == (year - exp) && storage_->employee[i].hiredate_m < month) || (storage_->employee[i].hiredate_y == (year - exp) && storage_->employee[i].hiredate_m == month && storage_->employee[i].hiredate_d < day))
          {
-            printf("Сотрудник №%d\n", i + 1);
-            printf("Фамилия: %s\n", storage_->employee[i].surname);
-            printf("Имя: %s\n", storage_->employee[i].name);
-            printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-            printf("Должность: %s\n", storage_->employee[i].post);
-            printf("Пол: %s\n", storage_->employee[i].sex);
-            printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
+            printf("РЎРѕС‚СЂСѓРґРЅРёРє в„–%d\n", i + 1);
+            printf("Р¤Р°РјРёР»РёСЏ: %s\n", storage_->employee[i].surname);
+            printf("РРјСЏ: %s\n", storage_->employee[i].name);
+            printf("РћС‚С‡РµСЃС‚РІРѕ: %s\n", storage_->employee[i].ptrnmc);
+            printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s\n", storage_->employee[i].post);
+            printf("РџРѕР»: %s\n", storage_->employee[i].sex);
+            printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
             printf("-------------------------------------\n");
          }
       }
@@ -241,20 +241,20 @@ void checkExp(const Employees_storage* storage_)
    }
    case 2:
    {
-      printf("Сотрудники, стаж которых меньше %d лет:\n", exp);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРєРё, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… РјРµРЅСЊС€Рµ %d Р»РµС‚:\n", exp);
       printf("-------------------------------------\n");
 
       for (int i = 0; i < storage_->num_empl; i++)
       {
          if ((storage_->employee[i].hiredate_y > (year - exp)) || (storage_->employee[i].hiredate_y == (year - exp) && storage_->employee[i].hiredate_m > month) || (storage_->employee[i].hiredate_y == (year - exp) && storage_->employee[i].hiredate_m == month && storage_->employee[i].hiredate_d > day))
          {
-            printf("Сотрудник №%d\n", i + 1);
-            printf("Фамилия: %s\n", storage_->employee[i].surname);
-            printf("Имя: %s\n", storage_->employee[i].name);
-            printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-            printf("Должность: %s\n", storage_->employee[i].post);
-            printf("Пол: %s\n", storage_->employee[i].sex);
-            printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
+            printf("РЎРѕС‚СЂСѓРґРЅРёРє в„–%d\n", i + 1);
+            printf("Р¤Р°РјРёР»РёСЏ: %s\n", storage_->employee[i].surname);
+            printf("РРјСЏ: %s\n", storage_->employee[i].name);
+            printf("РћС‚С‡РµСЃС‚РІРѕ: %s\n", storage_->employee[i].ptrnmc);
+            printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s\n", storage_->employee[i].post);
+            printf("РџРѕР»: %s\n", storage_->employee[i].sex);
+            printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
             printf("-------------------------------------\n");
          }
       }
@@ -262,20 +262,20 @@ void checkExp(const Employees_storage* storage_)
    }
    case 3:
    {
-      printf("Сотрудники, стаж которых равен %d лет:\n", exp);
+      printf("РЎРѕС‚СЂСѓРґРЅРёРєРё, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… СЂР°РІРµРЅ %d Р»РµС‚:\n", exp);
       printf("-------------------------------------\n");
 
       for (int i = 0; i < storage_->num_empl; i++)
       {
          if (storage_->employee[i].hiredate_y == (year - exp) && storage_->employee[i].hiredate_m == month && storage_->employee[i].hiredate_d == day)
          {
-            printf("Сотрудник №%d\n", i + 1);
-            printf("Фамилия: %s\n", storage_->employee[i].surname);
-            printf("Имя: %s\n", storage_->employee[i].name);
-            printf("Отчество: %s\n", storage_->employee[i].ptrnmc);
-            printf("Должность: %s\n", storage_->employee[i].post);
-            printf("Пол: %s\n", storage_->employee[i].sex);
-            printf("Дата приёма на работу: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
+            printf("РЎРѕС‚СЂСѓРґРЅРёРє в„–%d\n", i + 1);
+            printf("Р¤Р°РјРёР»РёСЏ: %s\n", storage_->employee[i].surname);
+            printf("РРјСЏ: %s\n", storage_->employee[i].name);
+            printf("РћС‚С‡РµСЃС‚РІРѕ: %s\n", storage_->employee[i].ptrnmc);
+            printf("Р”РѕР»Р¶РЅРѕСЃС‚СЊ: %s\n", storage_->employee[i].post);
+            printf("РџРѕР»: %s\n", storage_->employee[i].sex);
+            printf("Р”Р°С‚Р° РїСЂРёС‘РјР° РЅР° СЂР°Р±РѕС‚Сѓ: %d-%d-%d\n", storage_->employee[i].hiredate_d, storage_->employee[i].hiredate_m, storage_->employee[i].hiredate_y);
             printf("-------------------------------------\n");
          }
       }
@@ -283,7 +283,7 @@ void checkExp(const Employees_storage* storage_)
    }
    default:
    {
-      printf("Неверное действие");
+      printf("РќРµРІРµСЂРЅРѕРµ РґРµР№СЃС‚РІРёРµ");
       break;
    }  
    }
@@ -294,8 +294,8 @@ void MyMenu(const Employees_storage* storage_, FILE* file)
    unsigned int f = 0;
    while (1)
    {
-      printf("0 - Закрыть программу\n1 - Вывести данные о всех сотрудниках\n2 - Вывести данные о сотрудниках, стаж которых больше/меньше/равен n-лет\n\
-3 - Добавить сотрудника\n4 - Удалить сотрудника\nВыберите действие: ");
+      printf("0 - Р—Р°РєСЂС‹С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ\n1 - Р’С‹РІРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ РІСЃРµС… СЃРѕС‚СЂСѓРґРЅРёРєР°С…\n2 - Р’С‹РІРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…, СЃС‚Р°Р¶ РєРѕС‚РѕСЂС‹С… Р±РѕР»СЊС€Рµ/РјРµРЅСЊС€Рµ/СЂР°РІРµРЅ n-Р»РµС‚\n\
+3 - Р”РѕР±Р°РІРёС‚СЊ СЃРѕС‚СЂСѓРґРЅРёРєР°\n4 - РЈРґР°Р»РёС‚СЊ СЃРѕС‚СЂСѓРґРЅРёРєР°\nР’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ: ");
       scanf_s("%u", &f);
       printf("\n");
 
@@ -303,7 +303,7 @@ void MyMenu(const Employees_storage* storage_, FILE* file)
       {
       case 0:
       {
-         printf("Осуществлен выход из программы");
+         printf("РћСЃСѓС‰РµСЃС‚РІР»РµРЅ РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹");
          exit(1);
       }
       case 1:
@@ -330,7 +330,7 @@ void MyMenu(const Employees_storage* storage_, FILE* file)
       }
       default:
       {
-         printf("Неверное действие\n");
+         printf("РќРµРІРµСЂРЅРѕРµ РґРµР№СЃС‚РІРёРµ\n");
          break;
       }
       }
